@@ -1,0 +1,9 @@
+mysql -u root -p
+CREATE USER 'dev'@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'dev'@'10.10.11.123';
+
+Test:
+mysql -h 10.10.11.123 -u dev -p1234
+SHOW DATABASES;
+
